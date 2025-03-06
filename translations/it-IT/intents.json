@@ -1,0 +1,73 @@
+{
+  "query_ovos_location.intent": [
+    "Dimmi dove sei",
+    null,
+    null,
+    null
+  ],
+  "query_gpu.intent": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "query_primary_lang.intent": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "query_cpu_usage.intent": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "query_kernel_version.intent": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "query_langs.intent": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "query_user_lang.intent": [
+    null,
+    null
+  ],
+  "query_user_location.intent": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "query_extra_langs.intent": [
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "query_memory_usage.intent": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ]
+}
