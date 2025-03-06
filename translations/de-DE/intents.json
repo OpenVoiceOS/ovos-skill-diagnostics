@@ -1,0 +1,73 @@
+{
+  "query_ovos_location.intent": [
+    "Sag mir deinen Standort",
+    "Was ist Dein aktueller Standort",
+    "Wie ist Deine Lokation",
+    "Wo bist du"
+  ],
+  "query_gpu.intent": [
+    "verwendest du eine (GPU|Grafikkarte)",
+    "hast du eine  (GPU|Grafikkarte)",
+    "Hat Ihr System eine (GPU|Grafikkarte)",
+    "Befindet sich in Deinem System eine (GPU|Grafikkarte)?"
+  ],
+  "query_primary_lang.intent": [
+    "Nenne mir Deine Hauptsprache",
+    "sag mir deine Sprache",
+    "Was ist Deine Hauptsprache?",
+    "Was ist Deine Muttersprache?",
+    "welche Sprache verwendest du",
+    "Was ist Deine Systemsprache",
+    "auf welche Sprache bist du eingestellt",
+    "Welche Sprache ist Deine Standardsprache?"
+  ],
+  "query_cpu_usage.intent": [
+    "CPU Diagnose",
+    "aktuelle CPU-Auslastung",
+    "wie viel CPU verwendest Du",
+    "wie viel Prozessor wird verwendet",
+    "Sag mir deine CPU-Auslastung",
+    "wie hoch ist die CPU-Auslastung",
+    "wie hoch ist Deine CPU-Auslastung"
+  ],
+  "query_kernel_version.intent": [
+    "Sag mir deine Kernel-Version",
+    "Was ist Deine Kernel-Version?",
+    "welche Kernel-Version verwendest Du",
+    "welchen Kernel hast du"
+  ],
+  "query_langs.intent": [
+    "welche Sprachen kannst du (sprechen|verstehen)",
+    "Verfügbare Sprachen",
+    "Liste (Deine|unterstützten|verfügbaren|) Sprachen",
+    "nenne mir alle deine Sprachen",
+    "Was sind Deine Systemsprachen?",
+    "welche Sprachen verwendest du",
+    "Welche Sprachen sind verfügbar"
+  ],
+  "query_user_lang.intent": [
+    "welche Sprache (spreche|verwende) ich",
+    "(welche|welche) Sprache (sprechen|verwenden) wir"
+  ],
+  "query_user_location.intent": [
+    "Sag mir meinen Standort",
+    "Was ist mein aktueller Standort?",
+    "wie ist mein Standort",
+    "wo bin ich"
+  ],
+  "query_extra_langs.intent": [
+    "Hast Du zusätzliche Sprachen",
+    "Nenne mir Deine (zusätzlichen|weiteren) Sprachen",
+    "Was sind Deine zusätzlichen Sprachen?",
+    "welche anderen Sprachen hast du",
+    "welche zusätzlichen Sprachen verwendest Du"
+  ],
+  "query_memory_usage.intent": [
+    "aktuelle Speichernutzung",
+    "wie viel RAM verwendest du",
+    "Speicherdiagnose",
+    "nenne mir deinen Speicherstatus",
+    "wie hoch ist deine Speichernutzung",
+    "Wie viel Speicher ist verfügbar?"
+  ]
+}
