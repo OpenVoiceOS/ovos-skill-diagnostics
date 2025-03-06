@@ -1,0 +1,76 @@
+{
+  "query_ovos_location.intent": [
+    "diga-me a sua localização",
+    "qual a sua localização atual",
+    "qual é a tua localização",
+    "onde estás"
+  ],
+  "query_gpu.intent": [
+    "está a usar uma GPU",
+    "(tens|tem) uma gpu",
+    "o (teu|seu) sistema tem uma gpu",
+    "existe uma gpu no (teu|seu) sistema"
+  ],
+  "query_primary_lang.intent": [
+    "(diz-me|diga-me) qual [é] a (tua|sua) língua (materna|principal|nativa|padrão)",
+    "(diz-me|diga-me) a (tua|sua) lingua",
+    "qual a (tua|sua) língua principal",
+    "qual o seu idioma principal",
+    "que idioma está[s] a usar",
+    "qual o idioma do seu sistema",
+    "em que idioma está definido",
+    "qual é o seu idioma padrão"
+  ],
+  "query_cpu_usage.intent": [
+    "diagnóstico de cpu",
+    "carga atual do cpu",
+    "quanto cpu está a usar",
+    "quanto processador está em utilização",
+    "diga-me o uso da sua CPU",
+    "qual a carga da CPU",
+    "qual a utilização da sua CPU"
+  ],
+  "query_kernel_version.intent": [
+    "diga-me a sua versão do kernel",
+    "qual a versão do seu kernel",
+    "qual a versão do kernel que está a usar",
+    "qual o kernel que tem"
+  ],
+  "query_langs.intent": [
+    "quais (línguas|idiomas)  consegue[s] (falar|compreender)",
+    "(línguas|idiomas) disponíveis",
+    "listar (línguas|idiomas)   (suportados|disponíveis|) ",
+    "diga-me (todas as suas línguas|todos os seus idiomas)",
+    "quais (as línguas|os idiomas)  do seu sistema",
+    "quais [são] (as línguas|os idiomas) que está[s] a usar",
+    "quais [são] (as línguas|os idiomas) disponíveis"
+  ],
+  "query_user_lang.intent": [
+    "(qual|qual a) língua que estou a (falar|utilizar)",
+    "(qual|qual a) língua que estamos (falando|usando)"
+  ],
+  "query_user_location.intent": [
+    "diga-me a minha localização",
+    "qual a minha localização atual",
+    "qual a minha localização",
+    "onde estou"
+  ],
+  "query_extra_langs.intent": [
+    "tem línguas secundárias",
+    "diga-me os seus idiomas extra[s]",
+    "quais são os seus idiomas adicionais",
+    "que (outras línguas|outros idiomas) (tens|tem)",
+    "que idiomas extra está[s] a usar"
+  ],
+  "no_secondary_langs.intent": [
+    "Eu não falo outra língua"
+  ],
+  "query_memory_usage.intent": [
+    "utilização de memória atual",
+    "quanta ram está a usar",
+    "diagnóstico de memória",
+    "diga-me o seu estado de memória",
+    "qual o seu uso de memória",
+    "qual a sua memória disponível"
+  ]
+}
