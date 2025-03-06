@@ -1,8 +1,8 @@
 # Changelog
 
-## [0.0.3a2](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.0.3a2) (2025-03-06)
+## [0.0.3a1](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.0.3a1) (2025-03-06)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/V0.0.2...0.0.3a2)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/V0.0.2...0.0.3a1)
 
 **Merged pull requests:**
 
