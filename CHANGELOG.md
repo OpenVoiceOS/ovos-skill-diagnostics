@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.0.2a1](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.0.2a1) (2025-03-06)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.0.1a1...0.0.2a1)
+
+**Merged pull requests:**
+
+- fix: dialog filename [\#4](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/4) ([JarbasAl](https://github.com/JarbasAl))
+- pt-pt/translate [\#3](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/3) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
+
 ## [0.0.1a1](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.0.1a1) (2025-03-06)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.0.0...0.0.1a1)
