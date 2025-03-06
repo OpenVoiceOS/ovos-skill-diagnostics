@@ -1,21 +1,18 @@
 # Changelog
 
-## [0.0.2a1](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.0.2a1) (2025-03-06)
+## [0.0.3a2](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.0.3a2) (2025-03-06)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.0.1a1...0.0.2a1)
-
-**Merged pull requests:**
-
-- fix: dialog filename [\#4](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/4) ([JarbasAl](https://github.com/JarbasAl))
-- pt-pt/translate [\#3](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/3) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
-
-## [0.0.1a1](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.0.1a1) (2025-03-06)
-
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.0.0...0.0.1a1)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/V0.0.2...0.0.3a2)
 
 **Merged pull requests:**
 
-- fix:intent [\#1](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/1) ([JarbasAl](https://github.com/JarbasAl))
+- added italian translation [\#8](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/8) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
+- added italian translation [\#7](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/7) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
+- pt-pt/translate [\#6](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/6) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
+
+## [V0.0.2](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/V0.0.2) (2025-03-06)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.0.2...V0.0.2)
 
 
 
