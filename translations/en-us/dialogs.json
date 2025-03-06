@@ -5,6 +5,9 @@
     "user_location.dialog": [
         "Your location is {location}"
     ],
+    "no_secondary_langs.dialog": [
+        "I don't speak any extra languages"
+    ],
     "secondary_langs.dialog": [
         "I can also speak {langs}"
     ],

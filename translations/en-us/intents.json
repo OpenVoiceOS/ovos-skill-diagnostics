@@ -62,9 +62,6 @@
         "what other languages do you have",
         "which extra languages are you using"
     ],
-    "no_secondary_langs.intent": [
-        "I don't speak any extra languages"
-    ],
     "query_memory_usage.intent": [
         "current memory usage",
         "how much ram are you using",
