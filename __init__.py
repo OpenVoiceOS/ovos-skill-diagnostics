@@ -50,7 +50,7 @@ class SystemDiagnosticsSkill(OVOSSkill):
         location = self.location_pretty
         self.speak_dialog("user_location", {"location": location})
 
-    @intent_handler("query_user_location.intent")
+    @intent_handler("query_ovos_location.intent")
     def handle_default_location(self, message):
         loc = Configuration().get("location", {}).get("city", {}).get("name")
         self.speak_dialog("system_location", {"location": loc})
