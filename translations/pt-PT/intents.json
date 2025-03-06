@@ -2,21 +2,21 @@
   "query_ovos_location.intent": [
     "diga-me a sua localização",
     "qual a sua localização atual",
-    null,
+    "qual é a tua localização",
     "onde estás"
   ],
   "query_gpu.intent": [
     "está a usar uma GPU",
-    null,
-    null,
-    null
+    "(tens|tem) uma gpu",
+    "o (teu|seu) sistema tem uma gpu",
+    "existe uma gpu no (teu|seu) sistema"
   ],
   "query_primary_lang.intent": [
-    null,
-    null,
-    null,
+    "(diz-me|diga-me) qual [é] a (tua|sua) língua (materna|principal|nativa|padrão)",
+    "(diz-me|diga-me) a (tua|sua) lingua",
+    "qual a (tua|sua) língua principal",
     "qual o seu idioma principal",
-    null,
+    "que idioma está[s] a usar",
     "qual o idioma do seu sistema",
     "em que idioma está definido",
     "qual é o seu idioma padrão"
@@ -37,13 +37,13 @@
     "qual o kernel que tem"
   ],
   "query_langs.intent": [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
+    "quais (línguas|idiomas)  consegue[s] (falar|compreender)",
+    "(línguas|idiomas) disponíveis",
+    "listar (línguas|idiomas)   (suportados|disponíveis|) ",
+    "diga-me (todas as suas línguas|todos os seus idiomas)",
+    "quais (as línguas|os idiomas)  do seu sistema",
+    "quais [são] (as línguas|os idiomas) que está[s] a usar",
+    "quais [são] (as línguas|os idiomas) disponíveis"
   ],
   "query_user_lang.intent": [
     "(qual|qual a) língua que estou a (falar|utilizar)",
@@ -57,10 +57,10 @@
   ],
   "query_extra_langs.intent": [
     "tem línguas secundárias",
-    null,
+    "diga-me os seus idiomas extra[s]",
     "quais são os seus idiomas adicionais",
-    null,
-    null
+    "que (outras línguas|outros idiomas) (tens|tem)",
+    "que idiomas extra está[s] a usar"
   ],
   "no_secondary_langs.intent": [
     "Eu não falo outra língua"
