@@ -62,9 +62,6 @@
     "que (outras línguas|outros idiomas) (tens|tem)",
     "que idiomas extra está[s] a usar"
   ],
-  "no_secondary_langs.intent": [
-    "Eu não falo outra língua"
-  ],
   "query_memory_usage.intent": [
     "utilização de memória atual",
     "quanta ram está a usar",
