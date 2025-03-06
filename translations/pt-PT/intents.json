@@ -1,0 +1,76 @@
+{
+  "query_ovos_location.intent": [
+    "diga-me a sua localização",
+    "qual a sua localização atual",
+    null,
+    "onde estás"
+  ],
+  "query_gpu.intent": [
+    "está a usar uma GPU",
+    null,
+    null,
+    null
+  ],
+  "query_primary_lang.intent": [
+    null,
+    null,
+    null,
+    "qual o seu idioma principal",
+    null,
+    "qual o idioma do seu sistema",
+    "em que idioma está definido",
+    "qual é o seu idioma padrão"
+  ],
+  "query_cpu_usage.intent": [
+    "diagnóstico de cpu",
+    "carga atual do cpu",
+    "quanto cpu está a usar",
+    "quanto processador está em utilização",
+    "diga-me o uso da sua CPU",
+    "qual a carga da CPU",
+    "qual a utilização da sua CPU"
+  ],
+  "query_kernel_version.intent": [
+    "diga-me a sua versão do kernel",
+    "qual a versão do seu kernel",
+    "qual a versão do kernel que está a usar",
+    "qual o kernel que tem"
+  ],
+  "query_langs.intent": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+  ],
+  "query_user_lang.intent": [
+    "(qual|qual a) língua que estou a (falar|utilizar)",
+    "(qual|qual a) língua que estamos (falando|usando)"
+  ],
+  "query_user_location.intent": [
+    "diga-me a minha localização",
+    "qual a minha localização atual",
+    "qual a minha localização",
+    "onde estou"
+  ],
+  "query_extra_langs.intent": [
+    "tem línguas secundárias",
+    null,
+    "quais são os seus idiomas adicionais",
+    null,
+    null
+  ],
+  "no_secondary_langs.intent": [
+    "Eu não falo outra língua"
+  ],
+  "query_memory_usage.intent": [
+    "utilização de memória atual",
+    "quanta ram está a usar",
+    "diagnóstico de memória",
+    "diga-me o seu estado de memória",
+    "qual o seu uso de memória",
+    "qual a sua memória disponível"
+  ]
+}
