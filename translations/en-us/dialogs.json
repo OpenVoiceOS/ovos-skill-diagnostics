@@ -1,0 +1,35 @@
+{
+    "primary_lang.dialog": [
+        "My primary language is {lang}"
+    ],
+    "user_location.dialog": [
+        "Your location is {location}"
+    ],
+    "secondary_langs.dialog": [
+        "I can also speak {langs}"
+    ],
+    "current_lang.dialog": [
+        "We are currently speaking {lang}"
+    ],
+    "cpu_percent.dialog": [
+        "I am using {cpu} per cent of my CPU"
+    ],
+    "no_gpu.dialog": [
+        "No, I don't have a G P U"
+    ],
+    "system_location.dialog": [
+        "My location is {location}"
+    ],
+    "available_memory.dialog": [
+        "{memory} available out of {total}"
+    ],
+    "kernel_version.dialog": [
+        "I am running on {os_info}"
+    ],
+    "current_memory.dialog": [
+        "Current memory usage is {memory} percent"
+    ],
+    "has_gpu.dialog": [
+        "yes I have a G P U"
+    ]
+}

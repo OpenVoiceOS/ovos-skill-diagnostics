@@ -1,0 +1,76 @@
+{
+    "query_ovos_location.intent": [
+        "tell me your location",
+        "what is your current location",
+        "what's your location",
+        "where are you"
+    ],
+    "query_gpu.intent": [
+        "are you using a gpu",
+        "do you have a gpu",
+        "does your system have a gpu",
+        "is there a gpu in your system"
+    ],
+    "query_primary_lang.intent": [
+        "tell me your core language",
+        "tell me your language",
+        "what is your main language",
+        "what is your primary language",
+        "what language are you using",
+        "what's your system language",
+        "which language are you set to",
+        "which language is your default"
+    ],
+    "query_cpu_usage.intent": [
+        "cpu diagnostics",
+        "current cpu load",
+        "how much cpu are you using",
+        "how much processor is in use",
+        "tell me your cpu usage",
+        "what is the cpu load",
+        "what is your cpu usage"
+    ],
+    "query_kernel_version.intent": [
+        "tell me your kernel version",
+        "what is your kernel version",
+        "what kernel version are you using",
+        "which kernel do you have"
+    ],
+    "query_langs.intent": [
+        "(what|which) languages can you (speak|understand)",
+        "available languages",
+        "list (your|supported|available|) languages",
+        "tell me all your languages",
+        "what are your system languages",
+        "what languages are you using",
+        "which languages are available"
+    ],
+    "query_user_lang.intent": [
+        "(which|what) language am I (speaking|using)",
+        "(which|what) language are we (speaking|using)"
+    ],
+    "query_user_location.intent": [
+        "tell me my location",
+        "what is my current location",
+        "what's my location",
+        "where am i"
+    ],
+    "query_extra_langs.intent": [
+        "do you have secondary languages",
+        "tell me your extra languages",
+        "what are your additional languages",
+        "what other languages do you have",
+        "which extra languages are you using"
+    ],
+    "no_secondary_langs.intent": [
+        "I don't speak any extra languages"
+    ],
+    "query_memory_usage.intent": [
+        "current memory usage",
+        "how much ram are you using",
+        "memory diagnostics",
+        "tell me your memory status",
+        "what is your memory usage",
+        "what's your available memory"
+    ]
+}
