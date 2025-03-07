@@ -1,73 +1,73 @@
 {
-  "query_ovos_location.intent": [
-    "Dimmi dove sei",
-    null,
-    null,
-    null
-  ],
-  "query_gpu.intent": [
-    null,
-    null,
-    null,
-    null
-  ],
-  "query_primary_lang.intent": [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
-  ],
-  "query_cpu_usage.intent": [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
-  ],
-  "query_kernel_version.intent": [
-    null,
-    null,
-    null,
-    null
-  ],
-  "query_langs.intent": [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
-  ],
-  "query_user_lang.intent": [
-    null,
-    null
-  ],
-  "query_user_location.intent": [
-    null,
-    null,
-    null,
-    null
-  ],
-  "query_extra_langs.intent": [
-    null,
-    null,
-    null,
-    null,
-    null
-  ],
-  "query_memory_usage.intent": [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null
-  ]
+    "query_ovos_location.intent": [
+        "dove sei",
+        "qual è la tua posizione( attuale|)?",
+        "qual è la tua posizione?",
+        "dove ti trovi?"
+    ],
+    "query_gpu.intent": [
+        "stai usando una G P U?",
+        "hai una G P U?",
+        "il tuo (sistema|computer) ha una G P U?",
+        "c'è una G P U nel tuo (sistema|computer)?"
+    ],
+    "query_primary_lang.intent": [
+        "lingua principale?",
+        "in che lingua stai parlando?",
+        "qual è la tua lingua principale?",
+        "qual è la tua lingua primaria?",
+        "che lingua stai usando?",
+        "qual è la lingua del tuo sistema?",
+        "in che lingua sei impostato?",
+        "lingua predefinita?"
+    ],
+    "query_cpu_usage.intent": [
+        "diagnostico C P U",
+        "(qual è il |)carico (attuale |)della C P U?",
+        "quanta C P U stai usando?",
+        "quanto processore stai usando?",
+        "che percentuale di C P U stai usando?",
+        "(qual è il |)carico (attuale |)della C P U?",
+        "(qual è il |)carico (attuale |)della C P U?"
+    ],
+    "query_kernel_version.intent": [
+        "dimmi la tua versione del kernel",
+        "qual è la tua versione del kernel",
+        "quale versione del kernel stai usando",
+        "quale kernel hai"
+    ],
+    "query_langs.intent": [
+        "(che|quali) lingue puoi (parlare|capire)",
+        "lingue disponibili",
+        "elenca (le tue|le) lingue (supportate|disponibili)",
+        "dimmi tutte le tue lingue",
+        "quali sono le lingue del tuo sistema",
+        "quali lingue stai usando",
+        "quali lingue sono disponibili"
+    ],
+    "query_user_lang.intent": [
+        "(quale|che) lingua sto (parlando|usando)",
+        "(quale|che) lingua stiamo (parlando|usando)"
+    ],
+    "query_user_location.intent": [
+        "dimmi la mia posizione",
+        "qual è la mia posizione attuale",
+        "qual è la mia posizione",
+        "dove mi trovo"
+    ],
+    "query_extra_langs.intent": [
+        "hai lingue secondarie",
+        "dimmi le tue lingue extra",
+        "quali sono le tue lingue aggiuntive",
+        "quali altre lingue hai",
+        "quali lingue extra stai usando"
+    ],
+    "query_memory_usage.intent": [
+        "uso attuale della memoria",
+        "quanta ram stai usando",
+        "diagnostica della memoria",
+        "dimmi lo stato della tua memoria",
+        "qual è l'uso della tua memoria",
+        "quanta memoria hai disponibile"
+    ]
 }
