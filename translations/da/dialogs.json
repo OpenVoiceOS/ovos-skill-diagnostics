@@ -1,0 +1,38 @@
+{
+  "primary_lang.dialog": [
+    "Mit primære sprog er {lang}"
+  ],
+  "user_location.dialog": [
+    "Din placering er {location}"
+  ],
+  "no_secondary_langs.dialog": [
+    "Jeg taler ingen ekstra sprog"
+  ],
+  "secondary_langs.dialog": [
+    "Jeg kan også tale {langs}"
+  ],
+  "current_lang.dialog": [
+    "Vi taler i øjeblikket {lang}"
+  ],
+  "cpu_percent.dialog": [
+    "Jeg bruger {cpu} procent af min CPU"
+  ],
+  "no_gpu.dialog": [
+    "Nej, jeg har ikke en GPU"
+  ],
+  "system_location.dialog": [
+    "Min placering er {location}"
+  ],
+  "available_memory.dialog": [
+    "{memory} tilgængelig ud af {total}"
+  ],
+  "kernel_version.dialog": [
+    "Jeg kører på {os_info}"
+  ],
+  "current_memory.dialog": [
+    "Aktuelt hukommelsesforbrug er {memory} procent"
+  ],
+  "has_gpu.dialog": [
+    "ja jeg har en G P U"
+  ]
+}
