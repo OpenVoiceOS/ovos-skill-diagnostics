@@ -1,16 +1,16 @@
 # Changelog
 
-## [0.0.4a1](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.0.4a1) (2025-03-07)
+## [0.0.5a1](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.0.5a1) (2025-03-07)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/V0.0.3...0.0.4a1)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/V0.0.4...0.0.5a1)
 
 **Merged pull requests:**
 
-- first italian draft [\#10](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/10) ([denics](https://github.com/denics))
+- da-dk/translate [\#16](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/16) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
 
-## [V0.0.3](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/V0.0.3) (2025-03-06)
+## [V0.0.4](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/V0.0.4) (2025-03-07)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.0.3...V0.0.3)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.0.4...V0.0.4)
 
 
 
