@@ -1,0 +1,73 @@
+{
+  "query_ovos_location.intent": [
+    "fortæl mig din placering",
+    "hvad er din nuværende placering",
+    "hvad er din placering",
+    "hvor er du"
+  ],
+  "query_gpu.intent": [
+    "bruger du en gpu",
+    "har du en gpu",
+    "har dit system en gpu",
+    "er der en gpu i dit system"
+  ],
+  "query_primary_lang.intent": [
+    "fortæl mig dit kernesprog",
+    "fortæl mig dit sprog",
+    "hvad er dit hovedsprog",
+    "hvad er dit primære sprog",
+    "hvilket sprog bruger du",
+    "hvad er dit systemsprog",
+    "hvilket sprog er du indstillet til",
+    "hvilket sprog er dit standardsprog"
+  ],
+  "query_cpu_usage.intent": [
+    "cpu diagnostik",
+    "nuværende cpu-belastning",
+    "hvor meget cpu bruger du",
+    "hvor meget processor der er i brug",
+    "fortæl mig dit cpu-brug",
+    "hvad er cpu-belastningen",
+    "hvad er dit cpu-forbrug"
+  ],
+  "query_kernel_version.intent": [
+    "fortæl mig din kerneversion",
+    "hvad er din kerneversion",
+    "hvilken kerneversion bruger du",
+    "hvilken kerne har du"
+  ],
+  "query_langs.intent": [
+    "(hvilke|hvilke) sprog kan du (tale|forstå)",
+    "tilgængelige sprog",
+    "liste (dine|understøttede|tilgængelige|) sprog",
+    "fortæl mig alle dine sprog",
+    "hvad er dine systemsprog",
+    "hvilke sprog bruger du",
+    "hvilke sprog der er tilgængelige"
+  ],
+  "query_user_lang.intent": [
+    "(hvilket|hvilket) sprog er jeg (taler|bruger)",
+    "(hvilket|hvilket) sprog vi (taler|bruger)"
+  ],
+  "query_user_location.intent": [
+    "fortæl mig min placering",
+    "hvad er min nuværende placering",
+    "hvad er min placering",
+    "hvor er jeg"
+  ],
+  "query_extra_langs.intent": [
+    "har du sekundære sprog",
+    "fortæl mig dine ekstra sprog",
+    "hvad er dine ekstra sprog",
+    "hvilke andre sprog har du",
+    "hvilke ekstra sprog bruger du"
+  ],
+  "query_memory_usage.intent": [
+    "nuværende hukommelsesforbrug",
+    "hvor meget ram bruger du",
+    "hukommelsesdiagnostik",
+    "fortæl mig din hukommelsesstatus",
+    "hvad er dit hukommelsesforbrug",
+    "hvad er din tilgængelige hukommelse"
+  ]
+}
