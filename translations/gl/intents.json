@@ -1,0 +1,73 @@
+{
+  "query_ovos_location.intent": [
+    "dime a túa localización",
+    "cal é a túa localización actual",
+    "cal é a túa localización",
+    "onde estás"
+  ],
+  "query_gpu.intent": [
+    "estás usando unha GPU",
+    "tes unha GPU",
+    "o teu sistema ten unha GPU",
+    "hai unha GPU no teu sistema"
+  ],
+  "query_primary_lang.intent": [
+    "dime (cal é|) o teu idioma principal",
+    "dime (cal é|) o teu idioma",
+    "cal é o teu idioma principal",
+    "cal é a túa lingua predeterminada",
+    "que lingua estás a usar",
+    "cal é o idioma do teu sistema",
+    "en que idioma estás configurado",
+    "cal é o teu idioma por defecto"
+  ],
+  "query_cpu_usage.intent": [
+    "diagnóstico da CPU",
+    "carga actual da CPU",
+    "canta CPU estás usando",
+    "canto do teu procesador está en uso",
+    "dime o uso da túa CPU",
+    "cal é a carga da CPU",
+    "cal é o uso da túa CPU"
+  ],
+  "query_kernel_version.intent": [
+    "dime a versión do teu kernel",
+    "cal é a versión do teu kernel",
+    "que versión do kernel estás usando",
+    "que kernel tes"
+  ],
+  "query_langs.intent": [
+    "(que|cales) linguas (falas|entendes)",
+    "idiomas dispoñibles",
+    "enumera as túas linguas (dispoñibles|compatibles|)",
+    "dime todas as túas linguas",
+    "cales son os idiomas do teu sistema",
+    "que idiomas estás a usar",
+    "cales son os idiomas dispoñibles"
+  ],
+  "query_user_lang.intent": [
+    "(cal|que) lingua estou (falando|usando)",
+    "(cal|que) lingua estamos (falando|usando)"
+  ],
+  "query_user_location.intent": [
+    "dime a miña localización",
+    "cal é a miña localización actual",
+    "cal é a miña localización",
+    "onde estou"
+  ],
+  "query_extra_langs.intent": [
+    "tes linguas secundarias",
+    "dime as túas linguas adicionais",
+    "cales son os teus idiomas adicionais",
+    "que outras linguas tes",
+    "que outras linguas estás a usar"
+  ],
+  "query_memory_usage.intent": [
+    "uso actual da memoria",
+    "canto RAM estás a usar",
+    "diagnóstico de memoria",
+    "dime o estado da túa memoria",
+    "cal é o uso da túa memoria",
+    "canta memoria tes dispoñible"
+  ]
+}
