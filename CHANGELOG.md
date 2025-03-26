@@ -1,18 +1,16 @@
 # Changelog
 
-## [0.0.6a1](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.0.6a1) (2025-03-15)
+## [0.0.7a1](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.0.7a1) (2025-03-26)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/V0.0.5...0.0.6a1)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/V0.0.6...0.0.7a1)
 
 **Merged pull requests:**
 
-- Add Catalan strings [\#20](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/20) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
-- Add Catalan strings [\#19](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/19) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
-- Add Catalan strings [\#18](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/18) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
+- gl/translate [\#22](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/22) ([gitlocalize-app[bot]](https://github.com/apps/gitlocalize-app))
 
-## [V0.0.5](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/V0.0.5) (2025-03-07)
+## [V0.0.6](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/V0.0.6) (2025-03-15)
 
-[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.0.5...V0.0.5)
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.0.6...V0.0.6)
 
 
 
