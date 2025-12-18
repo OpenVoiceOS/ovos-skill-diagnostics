@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.9a2](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.0.9a2) (2025-12-18)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.0.9a1...0.0.9a2)
+
+**Merged pull requests:**
+
+- chore: Configure Renovate [\#28](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/28) ([renovate[bot]](https://github.com/apps/renovate))
+
 ## [0.0.9a1](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.0.9a1) (2025-11-21)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/V0.0.8...0.0.9a1)
