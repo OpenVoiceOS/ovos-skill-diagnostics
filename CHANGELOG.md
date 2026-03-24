@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.0.10a1](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.0.10a1) (2026-03-24)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.0.9a3...0.0.10a1)
+
+**Merged pull requests:**
+
+- fix: rename bare lang code locale directories [\#37](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/37) ([ovos-localize[bot]](https://github.com/apps/ovos-localize))
+- Add French diagnostics locale [\#36](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/36) ([goldyfruit](https://github.com/goldyfruit))
+
 ## [0.0.9a3](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.0.9a3) (2025-12-19)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.0.9a2...0.0.9a3)
