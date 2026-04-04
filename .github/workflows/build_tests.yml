@@ -16,9 +16,9 @@ jobs:
         python-version: [ "3.10", "3.11" ]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install Build Tools
@@ -30,10 +30,10 @@ jobs:
           sudo apt install python3-dev swig libssl-dev
       - name: Build Source Packages
         run: |
-          python setup.py sdist
+          python -m build --sdist
       - name: Build Distribution Packages
         run: |
-          python setup.py bdist_wheel
+          python -m build --wheel
       - name: Install skill
         run: |
           pip install .
