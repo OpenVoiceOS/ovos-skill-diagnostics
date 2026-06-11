@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.11a3](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.0.11a3) (2026-06-11)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.0.11a2...0.0.11a3)
+
+**Merged pull requests:**
+
+- docs: add TigreGotico attribution, link ILENIA [\#45](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/45) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.0.11a2](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.0.11a2) (2026-04-04)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.0.11a1...0.0.11a2)
