@@ -141,6 +141,90 @@ class TestQueryPrimaryLang(_IntentRoutingMixin, TestCase):
             "tell me your primary language", "query_primary_lang.intent")
 
 
+class TestQueryLangs(_IntentRoutingMixin, TestCase):
+    """query_langs.intent"""
+
+    def test_what_languages_can_you_speak(self):
+        self._assert_intent(
+            "what languages can you speak", "query_langs.intent")
+
+    def test_available_languages(self):
+        self._assert_intent(
+            "available languages", "query_langs.intent")
+
+
+class TestQueryExtraLangs(_IntentRoutingMixin, TestCase):
+    """query_extra_langs.intent"""
+
+    def test_what_other_languages_do_you_have(self):
+        self._assert_intent(
+            "what other languages do you have", "query_extra_langs.intent")
+
+    def test_tell_me_your_extra_languages(self):
+        self._assert_intent(
+            "tell me your extra languages", "query_extra_langs.intent")
+
+
+class TestQueryUserLang(_IntentRoutingMixin, TestCase):
+    """query_user_lang.intent"""
+
+    def test_what_language_am_i_speaking(self):
+        self._assert_intent(
+            "what language am i speaking", "query_user_lang.intent")
+
+    def test_what_language_am_i_using(self):
+        self._assert_intent(
+            "what language am i using", "query_user_lang.intent")
+
+
+class TestQueryGpu(_IntentRoutingMixin, TestCase):
+    """query_gpu.intent"""
+
+    def test_do_you_have_a_gpu(self):
+        self._assert_intent(
+            "do you have a gpu", "query_gpu.intent")
+
+    def test_does_your_system_have_a_gpu(self):
+        self._assert_intent(
+            "does your system have a gpu", "query_gpu.intent")
+
+
+class TestQueryKernelVersion(_IntentRoutingMixin, TestCase):
+    """query_kernel_version.intent"""
+
+    def test_what_is_your_kernel_version(self):
+        self._assert_intent(
+            "what is your kernel version", "query_kernel_version.intent")
+
+    def test_which_kernel_do_you_have(self):
+        self._assert_intent(
+            "which kernel do you have", "query_kernel_version.intent")
+
+
+class TestQueryOvosLocation(_IntentRoutingMixin, TestCase):
+    """query_ovos_location.intent"""
+
+    def test_where_are_you(self):
+        self._assert_intent(
+            "where are you", "query_ovos_location.intent")
+
+    def test_what_is_your_current_location(self):
+        self._assert_intent(
+            "what is your current location", "query_ovos_location.intent")
+
+
+class TestQueryUserLocation(_IntentRoutingMixin, TestCase):
+    """query_user_location.intent"""
+
+    def test_where_am_i(self):
+        self._assert_intent(
+            "where am i", "query_user_location.intent")
+
+    def test_what_is_my_current_location(self):
+        self._assert_intent(
+            "what is my current location", "query_user_location.intent")
+
+
 class TestNoMatch(_IntentRoutingMixin, TestCase):
     """Unrelated utterances must not route to any diagnostics intent."""
 
