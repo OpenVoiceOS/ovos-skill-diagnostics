@@ -37,6 +37,49 @@ class _IntentRoutingMixin:
         if getattr(cls, "minicroft", None):
             cls.minicroft.stop()
 
+    # Every ``.intent`` the skill registers; used by the negative case to prove
+    # an unrelated utterance routes to none of them.
+    ALL_INTENTS = (
+        "query_cpu_usage.intent",
+        "query_memory_usage.intent",
+        "query_primary_lang.intent",
+        "query_extra_langs.intent",
+        "query_langs.intent",
+        "query_user_lang.intent",
+        "query_gpu.intent",
+        "query_kernel_version.intent",
+        "query_ovos_location.intent",
+        "query_user_location.intent",
+    )
+
+    def _assert_no_match(self, utterance: str):
+        matched = []
+        handlers = {}
+        for intent_file in self.ALL_INTENTS:
+            intent_msg_type = f"{SKILL_ID}:{intent_file}"
+            handler = lambda msg, f=intent_file: matched.append(f)
+            handlers[intent_msg_type] = handler
+            self.minicroft.bus.on(intent_msg_type, handler)
+        try:
+            session = Session(f"e2e-en_us-nomatch-{hash(utterance)}")
+            session.lang = LANG
+            session.pipeline = PIPELINE
+            self.minicroft.bus.emit(Message(
+                "recognizer_loop:utterance",
+                {"utterances": [utterance], "lang": LANG},
+                {"session": session.serialize()},
+            ))
+            deadline = time.monotonic() + 15
+            while not matched and time.monotonic() < deadline:
+                time.sleep(0.2)
+        finally:
+            for intent_msg_type, handler in handlers.items():
+                self.minicroft.bus.remove(intent_msg_type, handler)
+        self.assertFalse(
+            matched,
+            f"{utterance!r} unexpectedly routed to {matched}",
+        )
+
     def _assert_intent(self, utterance: str, intent_file: str):
         intent_msg_type = f"{SKILL_ID}:{intent_file}"
         matched = []
@@ -96,3 +139,13 @@ class TestQueryPrimaryLang(_IntentRoutingMixin, TestCase):
     def test_your_primary_language(self):
         self._assert_intent(
             "tell me your primary language", "query_primary_lang.intent")
+
+
+class TestNoMatch(_IntentRoutingMixin, TestCase):
+    """Unrelated utterances must not route to any diagnostics intent."""
+
+    def test_unrelated_utterance_does_not_match(self):
+        self._assert_no_match("what is the weather like tomorrow")
+
+    def test_greeting_does_not_match(self):
+        self._assert_no_match("hey how are you doing today")
