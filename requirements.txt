@@ -1,3 +1,0 @@
-ovos_workshop>=0.0.12
-ovos-lang-parser
-psutil
