@@ -1,5 +1,3 @@
-do you have secondary languages
-tell me your extra languages
-what are your additional languages
-what other languages do you have
-which extra languages are you using
+do you have (secondary|extra|additional) languages
+(what|which) (extra|additional|other) languages (do you have|are you using)
+tell me your (extra|additional|secondary) languages
