@@ -1,8 +1,3 @@
-tell me your core language
-tell me your language
-what is your main language
-what is your primary language
-what language are you using
-what's your system language
-which language are you set to
-which language is your default
+(what|which) is your (primary|main|core|default|system) language
+tell me your (primary|main|core) language
+what language are you (using|set to)

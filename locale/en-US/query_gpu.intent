@@ -1,4 +1,2 @@
-are you using a gpu
-do you have a gpu
-does your system have a gpu
-is there a gpu in your system
+(do you have|are you using|is there) a (gpu|graphics card|video card)
+does your system have a (gpu|graphics card|video card)
