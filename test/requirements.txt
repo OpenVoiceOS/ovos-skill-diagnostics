@@ -1,0 +1,2 @@
+ovoscope>=1.0.1a1
+pytest
