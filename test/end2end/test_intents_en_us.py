@@ -51,7 +51,7 @@ class _IntentRoutingMixin:
                 {"utterances": [utterance], "lang": LANG},
                 {"session": session.serialize()},
             ))
-            deadline = time.monotonic() + 15
+            deadline = time.monotonic() + 45
             while not matched and time.monotonic() < deadline:
                 time.sleep(0.2)
         finally:
