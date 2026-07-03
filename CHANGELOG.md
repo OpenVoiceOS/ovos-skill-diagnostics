@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.12a2](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.0.12a2) (2026-07-03)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.0.12a1...0.0.12a2)
+
+**Merged pull requests:**
+
+- chore: add ovoscope end2end intent-routing tests [\#43](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/43) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.0.12a1](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.0.12a1) (2026-07-03)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.0.11a3...0.0.12a1)
