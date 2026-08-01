@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.12a3](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.0.12a3) (2026-08-01)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.0.12a2...0.0.12a3)
+
+**Merged pull requests:**
+
+- docs: rewrite README in Simplified Technical English [\#50](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/50) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.0.12a2](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.0.12a2) (2026-07-03)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.0.12a1...0.0.12a2)
