@@ -16,6 +16,16 @@ from ovoscope import get_minicroft
 SKILL_ID = "ovos-skill-diagnostics.openvoiceos"
 LANG = "en-US"
 
+
+def _strip_suffix(intent_file: str) -> str:
+    """The intent-routing bus event (``<skill_id>:<intent_name>``) is
+    dispatched with the ``.intent`` filename suffix already stripped -- eg.
+    ``query_cpu_usage`` not ``query_cpu_usage.intent``. ``ALL_INTENTS`` and
+    the per-case labels below keep the ``.intent`` suffix as a readable
+    filename reference; this normalizes it to the wire form actually
+    emitted on the bus."""
+    return intent_file[:-len(".intent")] if intent_file.endswith(".intent") else intent_file
+
 # The intent files use padacioso sample syntax. Exact expansions score in the
 # -high band while looser variants land lower, so register all three bands.
 PIPELINE = [
@@ -56,7 +66,7 @@ class _IntentRoutingMixin:
         matched = []
         handlers = {}
         for intent_file in self.ALL_INTENTS:
-            intent_msg_type = f"{SKILL_ID}:{intent_file}"
+            intent_msg_type = f"{SKILL_ID}:{_strip_suffix(intent_file)}"
             handler = lambda msg, f=intent_file: matched.append(f)
             handlers[intent_msg_type] = handler
             self.minicroft.bus.on(intent_msg_type, handler)
@@ -81,7 +91,7 @@ class _IntentRoutingMixin:
         )
 
     def _assert_intent(self, utterance: str, intent_file: str):
-        intent_msg_type = f"{SKILL_ID}:{intent_file}"
+        intent_msg_type = f"{SKILL_ID}:{_strip_suffix(intent_file)}"
         matched = []
         handler = lambda msg: matched.append(msg)
         self.minicroft.bus.on(intent_msg_type, handler)
