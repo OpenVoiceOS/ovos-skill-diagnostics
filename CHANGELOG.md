@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.12a4](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.0.12a4) (2026-08-12)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.0.12a3...0.0.12a4)
+
+**Merged pull requests:**
+
+- test: add golden-utterance end2end suite \(en-US\) [\#52](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/52) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.0.12a3](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.0.12a3) (2026-08-01)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.0.12a2...0.0.12a3)
