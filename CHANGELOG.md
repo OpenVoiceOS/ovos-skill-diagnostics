@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.13a1](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.0.13a1) (2026-09-01)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.0.12a4...0.0.13a1)
+
+**Merged pull requests:**
+
+- fix: remove ambiguous alternatives from ca-ES query\_extra\_langs.intent [\#54](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/54) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.0.12a4](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.0.12a4) (2026-08-12)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.0.12a3...0.0.12a4)
