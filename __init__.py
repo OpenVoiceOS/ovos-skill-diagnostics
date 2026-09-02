@@ -1,8 +1,10 @@
 import platform
 import subprocess
+import time
 
 import psutil
 from ovos_config import Configuration
+from ovos_date_parser import nice_duration
 from ovos_lang_parser import pronounce_lang
 from ovos_number_parser import pronounce_number
 
@@ -45,6 +47,25 @@ class SystemDiagnosticsSkill(OVOSSkill):
         self.speak_dialog("available_memory",
                           {"memory": memory, "total": total})
 
+    @intent_handler("query_disk_space.intent")
+    def handle_get_disk_space(self, message):
+        d = psutil.disk_usage('/')
+        free = nice_bytes(d.free)
+        total = nice_bytes(d.total)
+        self.speak_dialog("disk.space", {"free": free, "total": total})
+
+    @intent_handler("query_uptime.intent")
+    def handle_get_uptime(self, message):
+        uptime = time.time() - psutil.boot_time()
+        self.speak_dialog("uptime",
+                          {"uptime": nice_duration(uptime, lang=self.lang)})
+
+    @intent_handler("query_core_version.intent")
+    def handle_get_core_version(self, message):
+        from ovos_core.version import VERSION_MAJOR, VERSION_MINOR, VERSION_BUILD
+        version = f"{VERSION_MAJOR}.{VERSION_MINOR}.{VERSION_BUILD}"
+        self.speak_dialog("core.version", {"version": version})
+
     @intent_handler("query_user_location.intent")
     def handle_user_location(self, message):
         location = self.location_pretty
@@ -80,29 +101,6 @@ class SystemDiagnosticsSkill(OVOSSkill):
         self.handle_primary_lang(message)
         if self.secondary_langs:
             self.handle_secondary_langs(message)
-
-    ######################
-    # TODO - query via bus
-    def handle_list_skills(self, message):
-        # TODO - placeholder
-        skills = [self.skill_id]
-        self.speak(f"I have the following skills installed: {', '.join(skills)}")
-
-    def handle_list_tts(self, message):
-        # TODO - placeholder
-        plugins = []
-        self.speak(f"I have the following text to speech plugins installed: {', '.join(plugins)}")
-
-    def handle_list_stt(self, message):
-        # TODO - placeholder
-        plugins = []
-        self.speak(f"I have the following speech to text plugins installed: {', '.join(plugins)}")
-
-    def handle_list_vad(self, message):
-        # TODO - placeholder
-        plugins = []
-        self.speak(f"I have the following voice activity detection plugins installed: {', '.join(plugins)}")
-
 
 def has_nvidia_gpu():
     try:
