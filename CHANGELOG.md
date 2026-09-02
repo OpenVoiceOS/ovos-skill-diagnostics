@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.13a2](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.0.13a2) (2026-09-02)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.0.13a1...0.0.13a2)
+
+**Merged pull requests:**
+
+- Add disk space, uptime and core-version diagnostics intents [\#57](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/57) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.0.13a1](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.0.13a1) (2026-09-01)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.0.12a4...0.0.13a1)
