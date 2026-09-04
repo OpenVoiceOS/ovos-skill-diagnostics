@@ -37,6 +37,22 @@ _PIPELINE = [
 
 GOLDEN_PATH = Path(__file__).parent / "golden_utterances.jsonl"
 
+# sibling-confusion negatives: each utterance is a real golden phrasing for
+# one diagnostics intent that lexically overlaps a sibling diagnostics
+# intent's vocabulary ("language", "location"). The sibling must not claim
+# it -- these are the pairs the m2v eval flagged as easy to confuse.
+SIBLING_NEGATIVES = [
+    ("where am i", "query_ovos_location.intent"),
+    ("where are you", "query_user_location.intent"),
+    ("what language am i speaking", "query_primary_lang.intent"),
+    ("what language am i speaking", "query_extra_langs.intent"),
+    ("tell me your primary language", "query_user_lang.intent"),
+    ("tell me your default language", "query_extra_langs.intent"),
+    ("what other languages do you have", "query_primary_lang.intent"),
+    ("what languages can you speak", "query_extra_langs.intent"),
+    ("tell me your default location", "query_user_location.intent"),
+]
+
 # utterances lifted verbatim from OTHER skills' golden-utterance slices,
 # picked for lexical overlap with diagnostics' "cpu"/"memory"/"language"/
 # "location"/"kernel"/"gpu" vocabulary.
@@ -126,3 +142,16 @@ def test_negative_confusable_not_claimed(minicroft, negative):
     matched = _matched_intent_names(minicroft, text, f"negative-{text}")
     claimed = any(m.startswith(f"{SKILL_ID}:") for m in matched if m)
     assert not claimed, f"{text!r} (from {source_skill}) was incorrectly claimed by {SKILL_ID}"
+
+
+@pytest.mark.timeout(60)
+@pytest.mark.parametrize(
+    "sibling", SIBLING_NEGATIVES, ids=lambda s: f"{s[0]}-not-{s[1]}"
+)
+def test_sibling_confusion_not_claimed(minicroft, sibling):
+    text, forbidden_label = sibling
+    forbidden = _expected_names(SKILL_ID, forbidden_label)
+    matched = _matched_intent_names(minicroft, text, f"sibling-{text}-{forbidden_label}")
+    assert not any(m in forbidden for m in matched), (
+        f"{text!r}: incorrectly claimed by sibling intent {sorted(forbidden)!r}, got {matched!r}"
+    )
