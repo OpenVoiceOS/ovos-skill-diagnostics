@@ -4,7 +4,7 @@ Report system information such as CPU usage, memory usage, and language settings
 
 ## About
 
-The System Diagnostics skill is an [OpenVoiceOS](https://github.com/OpenVoiceOS) skill built on [ovos-workshop](https://github.com/OpenVoiceOS/ovos-workshop). It reports kernel version, CPU and memory usage, GPU availability, and language settings. It also lists the installed skills, TTS plugins, STT plugins, and VAD plugins. Language queries use [ovos-lang-parser](https://github.com/OpenVoiceOS/ovos-lang-parser). Ask it a question by voice and it speaks back the answer.
+The System Diagnostics skill is an [OpenVoiceOS](https://github.com/OpenVoiceOS) skill built on [ovos-workshop](https://github.com/OpenVoiceOS/ovos-workshop). It reports kernel version, CPU, memory and disk usage, uptime, GPU availability, ovos-core version, location, and language settings. Language queries use [ovos-lang-parser](https://github.com/OpenVoiceOS/ovos-lang-parser). Ask it a question by voice and it speaks back the answer.
 
 ## Examples
 
