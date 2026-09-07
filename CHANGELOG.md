@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.14a1](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.0.14a1) (2026-09-07)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.0.13a2...0.0.14a1)
+
+**Merged pull requests:**
+
+- fix: ship every en-US intent in all locales [\#62](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/62) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.0.13a2](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.0.13a2) (2026-09-02)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.0.13a1...0.0.13a2)
