@@ -1,3 +1,5 @@
-(what's|what is) your uptime
-how long (have you been|are you) (running|up|on)
-when did you [last] (boot|start)
+(what's|what is) your [current] uptime
+how long (have you been|are you|has this (device|box|system) been) (running|up|on)
+how long since (you|your) last (boot|reboot|restart)
+how long since you (booted|rebooted|restarted)
+when did you [last] (boot|start|reboot|restart)

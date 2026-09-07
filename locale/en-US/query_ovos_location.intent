@@ -1,2 +1,4 @@
 where are you
-(what is|what's|tell me) your [current] location
+(what is|what's|tell me) your [current|default|configured|system] location
+where is (this device|the system) located
+what location (is this device|are you) (configured for|using|set to)
