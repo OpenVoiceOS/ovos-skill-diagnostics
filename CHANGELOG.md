@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.0a1](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.2.0a1) (2026-09-10)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.1.0a1...0.2.0a1)
+
+**Merged pull requests:**
+
+- feat: locale balance — en-US ca-ES da-DK de-DE es-ES eu-ES fr-FR gl-ES it-IT kab nl-NL oc-FR pt-BR pt-PT sv-SE [\#66](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/66) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.1.0a1](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.1.0a1) (2026-09-07)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.0.14a1...0.1.0a1)
