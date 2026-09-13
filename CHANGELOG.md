@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.0a2](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.2.0a2) (2026-09-13)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.2.0a1...0.2.0a2)
+
+**Merged pull requests:**
+
+- docs: remove fabricated skills/plugins listing claim [\#60](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/60) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.2.0a1](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.2.0a1) (2026-09-10)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.1.0a1...0.2.0a1)
