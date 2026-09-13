@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ovos-skill-diagnostics"
+dynamic = ["version"]
+description = "OVOS diagnostics skill"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+authors = [{name = "JarbasAi", email = "jarbasai@mailfence.com"}]
+keywords = ["ovos", "skill", "plugin"]
+dependencies = [
+    "ovos_workshop>=0.0.12",
+    "ovos-lang-parser",
+    "ovos-date-parser",
+    "psutil",
+]
+
+[project.optional-dependencies]
+test = [
+    "ovoscope>=1.0.1a1",
+    "pytest",
+]
+
+[project.urls]
+Homepage = "https://github.com/OpenVoiceOS/ovos-skill-diagnostics"
+
+[project.entry-points."opm.skill"]
+"ovos-skill-diagnostics.openvoiceos" = "ovos_skill_diagnostics:SystemDiagnosticsSkill"
+
+[tool.setuptools]
+include-package-data = true
+packages = ["ovos_skill_diagnostics"]
+
+[tool.setuptools.package-dir]
+ovos_skill_diagnostics = "."
+
+[tool.setuptools.package-data]
+ovos_skill_diagnostics = ["*.json", "locale/**/*"]
+
+[tool.setuptools.dynamic]
+version = {attr = "ovos_skill_diagnostics.version.__version__"}
