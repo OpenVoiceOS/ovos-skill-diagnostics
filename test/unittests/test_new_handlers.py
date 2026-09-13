@@ -25,7 +25,7 @@ class TestHandleGetDiskSpace(TestCase):
 
         disk_usage.assert_called_once_with('/')
         skill.speak_dialog.assert_called_once_with(
-            "disk.space", {"free": "1.0 Gibibyte", "total": "10.0 Gibibytes"})
+            "disk_space", {"free": "1.0 Gibibyte", "total": "10.0 Gibibytes"})
 
 
 class TestHandleGetUptime(TestCase):
@@ -56,4 +56,4 @@ class TestHandleGetCoreVersion(TestCase):
             SystemDiagnosticsSkill.handle_get_core_version(skill, MagicMock())
 
         skill.speak_dialog.assert_called_once_with(
-            "core.version", {"version": "9.8.7"})
+            "core_version", {"version": "9.8.7"})

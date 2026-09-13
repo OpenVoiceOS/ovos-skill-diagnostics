@@ -52,7 +52,7 @@ class SystemDiagnosticsSkill(OVOSSkill):
         d = psutil.disk_usage('/')
         free = nice_bytes(d.free)
         total = nice_bytes(d.total)
-        self.speak_dialog("disk.space", {"free": free, "total": total})
+        self.speak_dialog("disk_space", {"free": free, "total": total})
 
     @intent_handler("query_uptime.intent")
     def handle_get_uptime(self, message):
@@ -64,7 +64,7 @@ class SystemDiagnosticsSkill(OVOSSkill):
     def handle_get_core_version(self, message):
         from ovos_core.version import VERSION_MAJOR, VERSION_MINOR, VERSION_BUILD
         version = f"{VERSION_MAJOR}.{VERSION_MINOR}.{VERSION_BUILD}"
-        self.speak_dialog("core.version", {"version": version})
+        self.speak_dialog("core_version", {"version": version})
 
     @intent_handler("query_user_location.intent")
     def handle_user_location(self, message):
