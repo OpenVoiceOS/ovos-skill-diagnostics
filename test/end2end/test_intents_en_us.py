@@ -1,20 +1,42 @@
 """End-to-end intent-routing tests for ovos-skill-diagnostics (en-US).
 
-Each case feeds an utterance through a MiniCroft stack and asserts it routes
-to the expected ``.intent`` handler. Coverage spans the CPU-usage query, the
-memory-usage query, and the primary-language query.
+Most cases here feed an utterance through a MiniCroft stack and assert it
+routes to the expected ``.intent`` handler. Routing alone is satisfied by a
+handler that speaks nothing or speaks a stale value, so
+``query_kernel_version`` and ``query_primary_lang`` additionally capture the
+``speak`` message and assert its exact text against the skill's own dialog
+template filled with a value computed independently in the test (``platform``
+directly for the kernel/OS name, ``pronounce_lang`` -- the same formatting
+helper the skill calls, not the skill's own code -- for the language name).
+Both handlers only read host state (``platform.system/release`` and the
+minicroft's own configured language); neither is asked to write or change
+anything on the host.
 
 Run: pytest test/end2end/ -v
 """
+import platform
 import time
+from pathlib import Path
 from unittest import TestCase
 
 from ovos_bus_client.message import Message
 from ovos_bus_client.session import Session
+from ovos_lang_parser import pronounce_lang
 from ovoscope import get_minicroft
 
 SKILL_ID = "ovos-skill-diagnostics.openvoiceos"
 LANG = "en-US"
+
+SKILL_ROOT = Path(__file__).parent.parent.parent
+
+
+def _dialog_template(name: str) -> str:
+    """Read the en-US dialog file's own text directly, rather than a copy of
+    it written into the test -- a rewording of the dialog does not silently
+    desync the expected text from what actually ships."""
+    path = SKILL_ROOT / "locale" / "en-US" / f"{name}.dialog"
+    with open(path, encoding="utf-8") as f:
+        return f.readline().strip()
 
 
 def _strip_suffix(intent_file: str) -> str:
@@ -114,6 +136,32 @@ class _IntentRoutingMixin:
             f"{utterance!r} did not route to {intent_file}",
         )
 
+    def _assert_speaks(self, utterance: str, expected_text: str):
+        """Drive the utterance and assert the exact rendered text of the
+        `speak` message the handler emits, catching a handler that speaks
+        the wrong dialog or a stale/empty value while still routing fine."""
+        spoken = []
+        handler = lambda msg: spoken.append(msg.data.get("utterance"))
+        self.minicroft.bus.on("speak", handler)
+        try:
+            session = Session(f"e2e-en_us-speak-{hash(utterance)}")
+            session.lang = LANG
+            session.pipeline = PIPELINE
+            self.minicroft.bus.emit(Message(
+                "recognizer_loop:utterance",
+                {"utterances": [utterance], "lang": LANG},
+                {"session": session.serialize()},
+            ))
+            deadline = time.monotonic() + 45
+            while not spoken and time.monotonic() < deadline:
+                time.sleep(0.2)
+        finally:
+            self.minicroft.bus.remove("speak", handler)
+        self.assertEqual(
+            spoken, [expected_text],
+            f"{utterance!r}: expected spoken text {expected_text!r}, got {spoken!r}",
+        )
+
 
 class TestQueryCpuUsage(_IntentRoutingMixin, TestCase):
     """query_cpu_usage.intent"""
@@ -149,6 +197,16 @@ class TestQueryPrimaryLang(_IntentRoutingMixin, TestCase):
     def test_your_primary_language(self):
         self._assert_intent(
             "tell me your primary language", "query_primary_lang.intent")
+
+    def test_speaks_primary_language_name(self):
+        """The minicroft's core language is en-US with no secondary
+        languages configured, so `self.core_lang == self.lang == "en-US"`;
+        the expected spoken name is computed with the same `pronounce_lang`
+        helper the skill calls (not the skill's own logic) and dropped into
+        the dialog file's own template."""
+        expected = _dialog_template("primary_lang").format(
+            lang=pronounce_lang(LANG, LANG))
+        self._assert_speaks("tell me your primary language", expected)
 
 
 class TestQueryLangs(_IntentRoutingMixin, TestCase):
@@ -209,6 +267,17 @@ class TestQueryKernelVersion(_IntentRoutingMixin, TestCase):
     def test_which_kernel_do_you_have(self):
         self._assert_intent(
             "which kernel do you have", "query_kernel_version.intent")
+
+    def test_speaks_actual_kernel_and_os(self):
+        """The handler reads `platform.system()`/`platform.release()` --
+        the exact same call this test makes -- and speaks them through the
+        dialog file's own template; a handler returning a hardcoded or
+        stale OS string fails this even though it still routes fine. Read
+        only: no host state is changed by either the handler or the test."""
+        kernel = platform.release().split("-")[0]
+        expected = _dialog_template("kernel_version").format(
+            os_info=f"{platform.system()} {kernel}")
+        self._assert_speaks("what is your kernel version", expected)
 
 
 class TestQueryOvosLocation(_IntentRoutingMixin, TestCase):
