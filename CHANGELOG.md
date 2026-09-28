@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.1a5](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.2.1a5) (2026-09-28)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.2.1a4...0.2.1a5)
+
+**Merged pull requests:**
+
+- test: multilang runner reads its locales from the golden files on disk [\#79](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/79) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.2.1a4](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.2.1a4) (2026-09-28)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.2.1a3...0.2.1a4)
