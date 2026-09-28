@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.1a4](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.2.1a4) (2026-09-28)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.2.1a3...0.2.1a4)
+
+**Merged pull requests:**
+
+- locale: draft fa-IR pl-PL ru-RU from en-US \(machine translation, unvouched\) [\#77](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/77) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.2.1a3](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.2.1a3) (2026-09-28)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.2.1a2...0.2.1a3)
