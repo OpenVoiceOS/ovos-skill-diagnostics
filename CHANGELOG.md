@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.0a1](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.3.0a1) (2026-09-28)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.2.1a5...0.3.0a1)
+
+**Merged pull requests:**
+
+- feat: skill.json for the store, en-US and its locales [\#82](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/82) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.2.1a5](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.2.1a5) (2026-09-28)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.2.1a4...0.2.1a5)
