@@ -1,0 +1,3 @@
+{"skill_id": "ovos-skill-diagnostics.openvoiceos", "utterance": "какое ядро вы используете?", "intent_label": "query_kernel_version", "intent_type": "padatious", "needs_manual": false, "lang": "ru-RU", "machine_generated": true}
+{"skill_id": "ovos-skill-diagnostics.openvoiceos", "utterance": "диагностика памяти", "intent_label": "query_memory_usage", "intent_type": "padatious", "needs_manual": false, "lang": "ru-RU", "machine_generated": true}
+{"skill_id": "ovos-skill-diagnostics.openvoiceos", "utterance": "что у тебя на работе?", "intent_label": "query_uptime", "intent_type": "padatious", "needs_manual": false, "lang": "ru-RU", "machine_generated": true}

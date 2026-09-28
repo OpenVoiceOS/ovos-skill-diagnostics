@@ -1,0 +1,3 @@
+{"skill_id": "ovos-skill-diagnostics.openvoiceos", "utterance": "co jądro używasz", "intent_label": "query_kernel_version", "intent_type": "padatious", "needs_manual": false, "lang": "pl-PL", "machine_generated": true}
+{"skill_id": "ovos-skill-diagnostics.openvoiceos", "utterance": "diagnostyka pamięci", "intent_label": "query_memory_usage", "intent_type": "padatious", "needs_manual": false, "lang": "pl-PL", "machine_generated": true}
+{"skill_id": "ovos-skill-diagnostics.openvoiceos", "utterance": "Jaki jest twój czas na sprostowanie", "intent_label": "query_uptime", "intent_type": "padatious", "needs_manual": false, "lang": "pl-PL", "machine_generated": true}
