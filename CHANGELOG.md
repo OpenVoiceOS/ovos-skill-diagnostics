@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.0a2](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.3.0a2) (2026-10-01)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.3.0a1...0.3.0a2)
+
+**Merged pull requests:**
+
+- fix\(fa-IR\): strip the terminal question mark from the intent templates [\#85](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/85) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.3.0a1](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.3.0a1) (2026-09-28)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.2.1a5...0.3.0a1)
