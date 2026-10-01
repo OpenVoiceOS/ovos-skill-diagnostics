@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.0a1](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.4.0a1) (2026-10-01)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.3.0a3...0.4.0a1)
+
+**Merged pull requests:**
+
+- feat\(locale\): the two dialog files pl-PL and ru-RU do not ship, machine-drafted and unvouched [\#80](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/80) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.3.0a3](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.3.0a3) (2026-10-01)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.3.0a2...0.3.0a3)
