@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.0a3](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.3.0a3) (2026-10-01)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.3.0a2...0.3.0a3)
+
+**Merged pull requests:**
+
+- test: golden utterances for every intent in every shipped locale [\#84](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/84) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.3.0a2](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.3.0a2) (2026-10-01)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.3.0a1...0.3.0a2)
