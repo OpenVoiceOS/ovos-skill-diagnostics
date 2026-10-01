@@ -19,7 +19,7 @@ dependencies = [
 
 [project.optional-dependencies]
 test = [
-    "ovoscope>=1.0.1a1",
+    "ovoscope>=1.8.0a1,<2.0.0",
     "pytest",
 ]
 
