@@ -19,8 +19,11 @@ dependencies = [
 
 [project.optional-dependencies]
 test = [
-    "ovoscope>=1.0.1a1",
+    "ovoscope>=1.11.2a1",
+    "ovos-m2v-pipeline>=0.32.0a1",
+    "padacioso",
     "pytest",
+    "pytest-timeout",
 ]
 
 [project.urls]

@@ -1,10 +1,13 @@
-Jaki jest twój czas na sprostowanie
-Jak długo jesteś wstała
-/Jak długo jesteś.
+jaki jest twój czas pracy
+jak długo jesteś włączony
+od kiedy działasz
 Kiedy zacząłeś?
 Kiedy zaczęłaś
 ile czasu działa system
-Powiedz mi, jak się czujesz
-Ile czasu od czasu, kiedy się postawiłeś
-/Jak długo nie zaczęłaś.
+powiedz mi, jak długo działasz
+ile czasu minęło od twojego uruchomienia
+jak dawno się uruchomiłeś
 Od jak dawna się nie śpisz.
+(od jak dawna|ile czasu) jesteś (uruchomiony|w działaniu)
+kiedy (ostatnio|) cię (uruchomiono|zrestartowano)
+ile godzin minęło od włączenia
