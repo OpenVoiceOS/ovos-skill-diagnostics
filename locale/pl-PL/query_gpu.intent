@@ -1,12 +1,12 @@
 Czy jest jakiś gpu
 Czy masz gpu
 Używasz gpu
-jest karta graficzna
+[czy] jest karta graficzna
 Czy twój system ma gpu
 czy Twój system posiada kartę graficzną
 czy twój system posiada kartę wideo
 jest w Twoim systemie karta graficzna
-jest w Twoim układzie karta wideo
+czy w twoim systemie jest karta wideo
 diagnostyka gpu
 diagnostyka kart graficznych
 diagnostyka kart wideo
@@ -16,8 +16,8 @@ Powiedz mi, czy masz kartę wideo
 Masz gpu
 Masz kartę graficzną
 Masz kartę wideo
-jest zainstalowany gpu z gpu
+czy jest zainstalowane gpu
 jest zainstalowana karta graficzna
 jest zainstalowana karta wideo
-uruchamiaj kartę graficzną
-Uruchamiasz kartę wideo
+czy działasz na karcie graficznej
+czy działasz na karcie wideo
