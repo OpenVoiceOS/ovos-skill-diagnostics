@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.0a2](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.4.0a2) (2026-10-11)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.4.0a1...0.4.0a2)
+
+**Merged pull requests:**
+
+- test: natural golden rows and an m2v gate for every locale [\#59](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/59) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.4.0a1](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.4.0a1) (2026-10-01)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.3.0a3...0.4.0a1)
