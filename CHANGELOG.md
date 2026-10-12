@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.0a3](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.4.0a3) (2026-10-12)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.4.0a2...0.4.0a3)
+
+**Merged pull requests:**
+
+- test: assert m2v classifier routing effects for diagnostics [\#61](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/61) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.4.0a2](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.4.0a2) (2026-10-11)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.4.0a1...0.4.0a2)
