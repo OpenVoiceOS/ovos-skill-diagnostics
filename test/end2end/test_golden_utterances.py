@@ -54,10 +54,30 @@ NEGATIVE_ENGINE_GAPS = {
              "head templates and with the dev templates, and the claimed intent "
              "changes when a template changes",
 }
-# Locales whose rate below MIN_MATCH_RATE is a known gap: the rate check
-# becomes a non-strict xfail with this reason. The rows still run, the misses
-# are still printed, and the per-intent floor still fails the test.
-GOLDEN_LOCALE_GAPS = {}
+# Locales whose rate stays below MIN_MATCH_RATE on the published m2v model,
+# mapped to the rate measured there (identical in three runs) and the reason.
+# The rate check becomes an expected failure. It fails once the rate reaches
+# MIN_MATCH_RATE (the stale entry goes) or falls more than GAP_TOLERANCE below
+# the measured rate. The rows still run, the misses are still printed, and the
+# per-intent floor still fails the test.
+_RETRAIN = "published m2v model predates these templates; remove after retrain"
+GOLDEN_LOCALE_GAPS = {
+    "pl-PL": (0.795, f"{_RETRAIN}; 8 of 39 rows miss: 'na jakiej wersji jądra linuksa "
+                     "pracujesz' (none), 'ile mam jeszcze wolnej pamięci masowej' "
+                     "(query_memory_usage), 'czy to urządzenie ma gpu' (query_ovos_location), "
+                     "'na jakim jądrze działasz' (query_uptime), 'jakimi językami się "
+                     "posługujesz' (query_user_lang), 'w jakim języku zwykle mówisz' "
+                     "(query_extra_langs), 'od ilu godzin jesteś włączony' (none), "
+                     "'kiedy był twój ostatni restart' (none)"),
+    "ru-RU": (0.795, f"{_RETRAIN}; 8 of 39 rows miss: 'протестируй процессор' (none), "
+                     "'какие ещё языки ты используешь кроме основного' (none), "
+                     "'есть ли у тебя графический процессор' (query_cpu_usage), "
+                     "'ты используешь видеокарту' (none), 'на каком ядре ты работаешь' "
+                     "(none), 'на каком языке ты обычно говоришь' (query_user_lang), "
+                     "'когда тебя последний раз перезагружали' (none), "
+                     "'какой язык мы сейчас используем' (query_primary_lang)"),
+}
+GAP_TOLERANCE = 0.10
 # (locale, intent) pairs that the per-intent floor skips. Each pair keeps its
 # rows in the rate; only the floor check ignores it. A missing .intent file
 # still fails test/unittests/test_locale_intent_parity.py.
@@ -116,8 +136,16 @@ def test_golden_rows_match_their_intent(lang):
     assert not starved, (
         f"[{lang}] intents with fewer than {MIN_MATCHED_ROWS_PER_INTENT} matched rows: {starved}"
     )
-    if rate < MIN_MATCH_RATE and lang in GOLDEN_LOCALE_GAPS:
-        pytest.xfail(f"[{lang}] measured {rate:.1%}; known gap: {GOLDEN_LOCALE_GAPS[lang]}")
+    if lang in GOLDEN_LOCALE_GAPS:
+        measured, reason = GOLDEN_LOCALE_GAPS[lang]
+        assert rate >= measured - GAP_TOLERANCE, (
+            f"[{lang}] {rate:.1%} of rows match, more than {GAP_TOLERANCE:.0%} below "
+            f"the measured {measured:.1%}:\n  " + "\n  ".join(misses)
+        )
+        assert rate < MIN_MATCH_RATE, (
+            f"[{lang}] {rate:.1%} of rows match, at the gate: remove its GOLDEN_LOCALE_GAPS entry"
+        )
+        pytest.xfail(f"[{lang}] measured {rate:.1%}; known gap: {reason}")
     assert rate >= MIN_MATCH_RATE, (
         f"[{lang}] {rate:.1%} of rows match, below {MIN_MATCH_RATE:.0%}:\n  " + "\n  ".join(misses)
     )

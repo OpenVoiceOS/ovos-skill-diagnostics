@@ -110,3 +110,5 @@
 {"skill_id": "ovos-skill-diagnostics.openvoiceos", "utterance": "can you use a graphics card", "lang": "en-US", "intent_label": "query_gpu", "needs_manual": true, "machine_generated": true}
 {"skill_id": "ovos-skill-diagnostics.openvoiceos", "utterance": "how much free ram do you have left", "lang": "en-US", "intent_label": "query_memory_usage", "needs_manual": true, "machine_generated": true}
 {"skill_id": "ovos-skill-diagnostics.openvoiceos", "utterance": "is the processor working hard right now", "lang": "en-US", "intent_label": "query_cpu_usage", "needs_manual": true, "machine_generated": true}
+{"skill_id": "ovos-skill-diagnostics.openvoiceos", "utterance": "languages do you speak", "lang": "en-US", "intent_label": "query_langs", "needs_manual": false}
+{"skill_id": "ovos-skill-diagnostics.openvoiceos", "utterance": "languages can you speak", "lang": "en-US", "intent_label": "query_langs", "needs_manual": false}
