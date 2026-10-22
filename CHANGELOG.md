@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.1a1](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.4.1a1) (2026-10-22)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.4.0a3...0.4.1a1)
+
+**Merged pull requests:**
+
+- fix: answer "how many languages" in query\_langs; move the eu-ES singular language [\#91](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/91) ([JarbasAl](https://github.com/JarbasAl))
+
 ## [0.4.0a3](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.4.0a3) (2026-10-12)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.4.0a2...0.4.0a3)
