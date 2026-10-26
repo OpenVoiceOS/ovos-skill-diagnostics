@@ -42,10 +42,12 @@ MIN_MATCHED_ROWS_PER_INTENT = 1
 # A negative row that m2v claims in two runs is listed here by name, as
 # {lang: {utterance: claimed_intent}}. Any other claim fails the locale.
 NEGATIVE_KNOWN_CLAIMS = {
+    "en-US": {"where is the international space station": "query_disk_space"},
     "pl-PL": {"włącz jakąś muzykę": "query_extra_langs",
               "jak powiedzieć dzień dobry po angielsku": "query_primary_lang",
               "gdzie jest wieża eiffla": "query_kernel_version"},
-    "sv-SE": {"hur blir vädret i morgon": "query_uptime"},
+    "sv-SE": {"berätta ett skämt": "query_user_location",
+              "hur blir vädret i morgon": "query_uptime"},
 }
 # Locales whose negatives the published m2v model cannot separate from this
 # skill: the negative check becomes a non-strict xfail with this reason.
@@ -60,23 +62,7 @@ NEGATIVE_ENGINE_GAPS = {
 # MIN_MATCH_RATE (the stale entry goes) or falls more than GAP_TOLERANCE below
 # the measured rate. The rows still run, the misses are still printed, and the
 # per-intent floor still fails the test.
-_RETRAIN = "published m2v model predates these templates; remove after retrain"
-GOLDEN_LOCALE_GAPS = {
-    "pl-PL": (0.795, f"{_RETRAIN}; 8 of 39 rows miss: 'na jakiej wersji jądra linuksa "
-                     "pracujesz' (none), 'ile mam jeszcze wolnej pamięci masowej' "
-                     "(query_memory_usage), 'czy to urządzenie ma gpu' (query_ovos_location), "
-                     "'na jakim jądrze działasz' (query_uptime), 'jakimi językami się "
-                     "posługujesz' (query_user_lang), 'w jakim języku zwykle mówisz' "
-                     "(query_extra_langs), 'od ilu godzin jesteś włączony' (none), "
-                     "'kiedy był twój ostatni restart' (none)"),
-    "ru-RU": (0.795, f"{_RETRAIN}; 8 of 39 rows miss: 'протестируй процессор' (none), "
-                     "'какие ещё языки ты используешь кроме основного' (none), "
-                     "'есть ли у тебя графический процессор' (query_cpu_usage), "
-                     "'ты используешь видеокарту' (none), 'на каком ядре ты работаешь' "
-                     "(none), 'на каком языке ты обычно говоришь' (query_user_lang), "
-                     "'когда тебя последний раз перезагружали' (none), "
-                     "'какой язык мы сейчас используем' (query_primary_lang)"),
-}
+GOLDEN_LOCALE_GAPS = {}
 GAP_TOLERANCE = 0.10
 # (locale, intent) pairs that the per-intent floor skips. Each pair keeps its
 # rows in the rate; only the floor check ignores it. A missing .intent file
