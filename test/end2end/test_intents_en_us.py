@@ -15,14 +15,14 @@ anything on the host.
 Run: pytest test/end2end/ -v
 """
 import platform
-import time
 from pathlib import Path
 from unittest import TestCase
 
 from ovos_bus_client.message import Message
 from ovos_bus_client.session import Session
 from ovos_lang_parser import pronounce_lang
-from ovoscope import get_minicroft
+from ovoscope import CaptureSession
+from ovoscope.routing import PIPELINE, TALLY, get_prototype_minicroft
 
 SKILL_ID = "ovos-skill-diagnostics.openvoiceos"
 LANG = "en-US"
@@ -39,30 +39,12 @@ def _dialog_template(name: str) -> str:
         return f.readline().strip()
 
 
-def _strip_suffix(intent_file: str) -> str:
-    """The intent-routing bus event (``<skill_id>:<intent_name>``) is
-    dispatched with the ``.intent`` filename suffix already stripped -- eg.
-    ``query_cpu_usage`` not ``query_cpu_usage.intent``. ``ALL_INTENTS`` and
-    the per-case labels below keep the ``.intent`` suffix as a readable
-    filename reference; this normalizes it to the wire form actually
-    emitted on the bus."""
-    return intent_file[:-len(".intent")] if intent_file.endswith(".intent") else intent_file
-
-# The intent files use padacioso sample syntax. Exact expansions score in the
-# -high band while looser variants land lower, so register all three bands.
-PIPELINE = [
-    "ovos-padacioso-pipeline-plugin-high",
-    "ovos-padacioso-pipeline-plugin-medium",
-    "ovos-padacioso-pipeline-plugin-low",
-]
-
-
 class _IntentRoutingMixin:
-    """Shared MiniCroft setup for padacioso intent routing."""
+    """Shared MiniCroft setup for intent routing."""
 
     @classmethod
     def setUpClass(cls):
-        cls.minicroft = get_minicroft([SKILL_ID])
+        cls.minicroft = get_prototype_minicroft([SKILL_ID])
 
     @classmethod
     def tearDownClass(cls):
@@ -84,79 +66,38 @@ class _IntentRoutingMixin:
         "query_user_location.intent",
     )
 
+    def _run(self, utterance: str, tag: str):
+        session = Session(f"e2e-en_us-{tag}-{hash(utterance)}")
+        session.lang = LANG
+        session.pipeline = PIPELINE
+        capture = CaptureSession(self.minicroft)
+        capture.capture(Message(
+            "recognizer_loop:utterance",
+            {"utterances": [utterance], "lang": LANG},
+            {"session": session.serialize()},
+        ), timeout=45)
+        return capture.finish()
+
     def _assert_no_match(self, utterance: str):
-        matched = []
-        handlers = {}
-        for intent_file in self.ALL_INTENTS:
-            intent_msg_type = f"{SKILL_ID}:{_strip_suffix(intent_file)}"
-            handler = lambda msg, f=intent_file: matched.append(f)
-            handlers[intent_msg_type] = handler
-            self.minicroft.bus.on(intent_msg_type, handler)
-        try:
-            session = Session(f"e2e-en_us-nomatch-{hash(utterance)}")
-            session.lang = LANG
-            session.pipeline = PIPELINE
-            self.minicroft.bus.emit(Message(
-                "recognizer_loop:utterance",
-                {"utterances": [utterance], "lang": LANG},
-                {"session": session.serialize()},
-            ))
-            deadline = time.monotonic() + 15
-            while not matched and time.monotonic() < deadline:
-                time.sleep(0.2)
-        finally:
-            for intent_msg_type, handler in handlers.items():
-                self.minicroft.bus.remove(intent_msg_type, handler)
-        self.assertFalse(
-            matched,
-            f"{utterance!r} unexpectedly routed to {matched}",
-        )
+        messages = self._run(utterance, "nomatch")
+        TALLY.assert_not_routed(
+            utterance, [f"{SKILL_ID}:{intent}" for intent in self.ALL_INTENTS],
+            [m.msg_type for m in messages])
 
     def _assert_intent(self, utterance: str, intent_file: str):
-        intent_msg_type = f"{SKILL_ID}:{_strip_suffix(intent_file)}"
-        matched = []
-        handler = lambda msg: matched.append(msg)
-        self.minicroft.bus.on(intent_msg_type, handler)
-        try:
-            session = Session(f"e2e-en_us-{intent_file}-{hash(utterance)}")
-            session.lang = LANG
-            session.pipeline = PIPELINE
-            self.minicroft.bus.emit(Message(
-                "recognizer_loop:utterance",
-                {"utterances": [utterance], "lang": LANG},
-                {"session": session.serialize()},
-            ))
-            deadline = time.monotonic() + 45
-            while not matched and time.monotonic() < deadline:
-                time.sleep(0.2)
-        finally:
-            self.minicroft.bus.remove(intent_msg_type, handler)
-        self.assertTrue(
-            matched,
-            f"{utterance!r} did not route to {intent_file}",
-        )
+        messages = self._run(utterance, intent_file)
+        TALLY.assert_routed(utterance, f"{SKILL_ID}:{intent_file}",
+                            [m.msg_type for m in messages])
 
-    def _assert_speaks(self, utterance: str, expected_text: str):
+    def _assert_speaks(self, utterance: str, intent_file: str, expected_text: str):
         """Drive the utterance and assert the exact rendered text of the
         `speak` message the handler emits, catching a handler that speaks
         the wrong dialog or a stale/empty value while still routing fine."""
-        spoken = []
-        handler = lambda msg: spoken.append(msg.data.get("utterance"))
-        self.minicroft.bus.on("speak", handler)
-        try:
-            session = Session(f"e2e-en_us-speak-{hash(utterance)}")
-            session.lang = LANG
-            session.pipeline = PIPELINE
-            self.minicroft.bus.emit(Message(
-                "recognizer_loop:utterance",
-                {"utterances": [utterance], "lang": LANG},
-                {"session": session.serialize()},
-            ))
-            deadline = time.monotonic() + 45
-            while not spoken and time.monotonic() < deadline:
-                time.sleep(0.2)
-        finally:
-            self.minicroft.bus.remove("speak", handler)
+        messages = self._run(utterance, "speak")
+        TALLY.assert_routed(utterance, f"{SKILL_ID}:{intent_file}",
+                            [m.msg_type for m in messages])
+        spoken = [m.data.get("utterance") for m in messages
+                  if m.msg_type in ("speak", "ovos.utterance.speak")]
         self.assertEqual(
             spoken, [expected_text],
             f"{utterance!r}: expected spoken text {expected_text!r}, got {spoken!r}",
@@ -206,7 +147,8 @@ class TestQueryPrimaryLang(_IntentRoutingMixin, TestCase):
         the dialog file's own template."""
         expected = _dialog_template("primary_lang").format(
             lang=pronounce_lang(LANG, LANG))
-        self._assert_speaks("tell me your primary language", expected)
+        self._assert_speaks("tell me your primary language",
+                            "query_primary_lang.intent", expected)
 
 
 class TestQueryLangs(_IntentRoutingMixin, TestCase):
@@ -277,7 +219,8 @@ class TestQueryKernelVersion(_IntentRoutingMixin, TestCase):
         kernel = platform.release().split("-")[0]
         expected = _dialog_template("kernel_version").format(
             os_info=f"{platform.system()} {kernel}")
-        self._assert_speaks("what is your kernel version", expected)
+        self._assert_speaks("what is your kernel version",
+                            "query_kernel_version.intent", expected)
 
 
 class TestQueryOvosLocation(_IntentRoutingMixin, TestCase):
