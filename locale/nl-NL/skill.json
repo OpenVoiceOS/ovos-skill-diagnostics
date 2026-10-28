@@ -1,0 +1,27 @@
+{
+  "skill_id": "ovos-skill-diagnostics.openvoiceos",
+  "source": "https://github.com/OpenVoiceOS/ovos-skill-diagnostics",
+  "name": "System Diagnostics",
+  "description": "Report system information such as CPU usage, memory usage, and language settings.",
+  "examples": [
+    "ovos core versie",
+    "hoe druk is je processor",
+    "schijf diagnose",
+    "spreek je meer dan één taal",
+    "gpu diagnose",
+    "kernel diagnose",
+    "beschikbare talen",
+    "raakt je geheugen op",
+    "waar ben je",
+    "vertel me je taal",
+    "wat is je uptime",
+    "welke taal spreek ik",
+    "waar ben ik"
+  ],
+  "tags": [
+    "system",
+    "diagnostics",
+    "information",
+    "Configuration"
+  ]
+}
