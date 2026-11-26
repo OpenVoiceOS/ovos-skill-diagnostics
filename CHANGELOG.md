@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.5.0a1](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.5.0a1) (2026-11-26)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.4.1a2...0.5.0a1)
+
+**Merged pull requests:**
+
+- feat: speak CPU and memory percents with the numtag writer [\#96](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/96) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.4.1a2](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.4.1a2) (2026-10-28)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.4.1a1...0.4.1a2)
