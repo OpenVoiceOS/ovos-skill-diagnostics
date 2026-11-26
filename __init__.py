@@ -6,6 +6,7 @@ import psutil
 from ovos_config import Configuration
 from ovos_date_parser import nice_duration
 from ovos_lang_parser import pronounce_lang
+from numtag import UnsupportedLanguageError, spell
 from ovos_number_parser import pronounce_number
 
 from ovos_workshop.decorators import intent_handler
@@ -35,12 +36,12 @@ class SystemDiagnosticsSkill(OVOSSkill):
     @intent_handler("query_cpu_usage.intent")
     def handle_get_cpu(self, message):
         self.speak_dialog("cpu_percent",
-                          {"cpu": pronounce_number(psutil.cpu_percent(), lang=self.lang)})
+                          {"cpu": spoken_percent(psutil.cpu_percent(), self.lang)})
 
     @intent_handler("query_memory_usage.intent")
     def handle_get_memory(self, message):
         m = psutil.virtual_memory()
-        memory = pronounce_number(m.percent, lang=self.lang)
+        memory = spoken_percent(m.percent, self.lang)
         self.speak_dialog("current_memory", {"memory": memory})
         memory = nice_bytes(m.available)
         total = nice_bytes(m.total)
@@ -101,6 +102,16 @@ class SystemDiagnosticsSkill(OVOSSkill):
         self.handle_primary_lang(message)
         if self.secondary_langs:
             self.handle_secondary_langs(message)
+
+def spoken_percent(percent: float, lang: str) -> str:
+    """psutil percents carry one decimal; "45.0" reads as "45"."""
+    value = f"{percent:.1f}".removesuffix(".0")
+    try:
+        return spell(value, lang)[0].text
+    except UnsupportedLanguageError:
+        # numtag has no writer for this language (eu, fa, kab, oc, pl, ru, sv)
+        return pronounce_number(float(value), lang=lang)
+
 
 def has_nvidia_gpu():
     try:
