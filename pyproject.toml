@@ -10,11 +10,14 @@ readme = "README.md"
 license = {text = "Apache-2.0"}
 authors = [{name = "JarbasAi", email = "jarbasai@mailfence.com"}]
 keywords = ["ovos", "skill", "plugin"]
+requires-python = ">=3.11"
 dependencies = [
     "ovos_workshop>=0.0.12",
     "ovos-lang-parser",
     "ovos-date-parser",
     "psutil",
+    "numtag>=0.41.0a2",
+    "ovos-number-parser",
 ]
 
 [project.optional-dependencies]
