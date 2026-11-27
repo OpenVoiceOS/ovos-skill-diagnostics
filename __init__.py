@@ -109,7 +109,7 @@ def spoken_percent(percent: float, lang: str) -> str:
     try:
         return spell(value, lang)[0].text
     except UnsupportedLanguageError:
-        # numtag has no writer for this language (eu, fa, kab, oc, pl, ru, sv)
+        # numtag has no writer for this language (eu, fa, oc, pl, sv)
         return pronounce_number(float(value), lang=lang)
 
 
