@@ -16,7 +16,7 @@ dependencies = [
     "ovos-lang-parser",
     "ovos-date-parser",
     "psutil",
-    "numtag>=0.44.0a1",
+    "numtag>=0.46.0a2",
     "ovos-number-parser",
 ]
 

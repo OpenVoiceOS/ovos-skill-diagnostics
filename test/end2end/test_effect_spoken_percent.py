@@ -23,6 +23,16 @@ ROWS = [
     ("de-DE", "cpu diagnose", "neunundneunzig komma neun prozent"),
     ("nl-NL", "hoe druk is je processor", "negenennegentig komma negen procent"),
     ("da-DK", "cpu diagnostik", "nioghalvfems komma ni procent"),
+    # numtag tests/gold/sv.jsonl: "nittionio" (99), "nio" (9), "tre komma fem" (3.5)
+    ("sv-SE", "cpu diagnostik", "nittionio komma nio procent"),
+    # numtag tests/gold/eu.jsonl: "laurogeita hemeretzi" (99), "bederatzi" (9),
+    # Euskaltzaindia 203. araua "hogeita lau koma bost" (24.5). numtag and
+    # ovos-number-parser give the same words here, so the row is a guard.
+    ("eu-ES", "cpu diagnostikoa", "ehuneko laurogeita hemeretzi koma bederatzi erabiltzen"),
+    # numtag tests/gold/pl.jsonl: "dziewięćdziesiąt dziewięć" (99), "dziewięć" (9),
+    # "dwa przecinek pięć" (2.5). numtag and ovos-number-parser give the same
+    # words here, so the row is a guard.
+    ("pl-PL", "diagnostyka cpu", "dziewięćdziesiąt dziewięć przecinek dziewięć odsetek"),
 ]
 
 
