@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.5.1a1](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.5.1a1) (2026-11-27)
+
+[Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.5.0a1...0.5.1a1)
+
+**Merged pull requests:**
+
+- fix: raise the numtag floor to 0.44.0a1 for the ru writer [\#98](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/pull/98) ([openvoiceos-bot](https://github.com/openvoiceos-bot))
+
 ## [0.5.0a1](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/tree/0.5.0a1) (2026-11-26)
 
 [Full Changelog](https://github.com/OpenVoiceOS/ovos-skill-diagnostics/compare/0.4.1a2...0.5.0a1)
