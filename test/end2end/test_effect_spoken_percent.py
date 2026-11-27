@@ -45,3 +45,24 @@ def test_cpu_percent_is_spoken_in_words(monkeypatch, lang, utterance, number):
     finally:
         mc.stop()
     assert len(spoken) == 1 and number in spoken[0], spoken
+
+
+def test_whole_cpu_percent_is_spoken_in_words_ru_ru(monkeypatch):
+    """numtag tests/gold/ru.jsonl: CLDR RBNF ru renders 99 as "девяносто девять"."""
+    monkeypatch.setattr(ovos_skill_diagnostics.psutil, "cpu_percent", lambda: 99.0)
+    mc = get_prototype_minicroft([SKILL_ID], lang="ru-RU")
+    try:
+        session = Session("e2e-percent-ru-RU")
+        session.lang = "ru-RU"
+        session.pipeline = list(PIPELINE)
+        session.blacklisted_intents = []
+        msg = Message("recognizer_loop:utterance",
+                      {"utterances": ["проверь процессор"], "lang": "ru-RU"},
+                      {"session": session.serialize(), "source": "A", "destination": "B"})
+        capture = CaptureSession(mc, eof_msgs=["mycroft.skill.handler.complete"])
+        capture.capture(msg, timeout=30)
+        spoken = [m.data["utterance"].lower() for m in capture.finish()
+                  if m.msg_type in ("speak", "ovos.utterance.speak")]
+    finally:
+        mc.stop()
+    assert len(spoken) == 1 and "девяносто девять" in spoken[0], spoken
