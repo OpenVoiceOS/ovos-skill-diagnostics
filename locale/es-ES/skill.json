@@ -1,0 +1,27 @@
+{
+  "skill_id": "ovos-skill-diagnostics.openvoiceos",
+  "source": "https://github.com/OpenVoiceOS/ovos-skill-diagnostics",
+  "name": "System Diagnostics",
+  "description": "Report system information such as CPU usage, memory usage, and language settings.",
+  "examples": [
+    "qué versión de ovos usas",
+    "dime tu uso de CPU",
+    "diagnóstico del disco",
+    "Tienes otros idiomas",
+    "Tienes una GPU",
+    "Qué kernel tienes",
+    "Idiomas disponibles",
+    "uso actual de memoria",
+    "dónde estás",
+    "dime tu idioma",
+    "cuánto hace que arrancaste",
+    "en qué idioma hablo",
+    "Dónde estoy"
+  ],
+  "tags": [
+    "system",
+    "diagnostics",
+    "information",
+    "Configuration"
+  ]
+}

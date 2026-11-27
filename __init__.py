@@ -1,9 +1,12 @@
 import platform
 import subprocess
+import time
 
 import psutil
 from ovos_config import Configuration
+from ovos_date_parser import nice_duration
 from ovos_lang_parser import pronounce_lang
+from numtag import UnsupportedLanguageError, spell
 from ovos_number_parser import pronounce_number
 
 from ovos_workshop.decorators import intent_handler
@@ -33,17 +36,36 @@ class SystemDiagnosticsSkill(OVOSSkill):
     @intent_handler("query_cpu_usage.intent")
     def handle_get_cpu(self, message):
         self.speak_dialog("cpu_percent",
-                          {"cpu": pronounce_number(psutil.cpu_percent(), lang=self.lang)})
+                          {"cpu": spoken_percent(psutil.cpu_percent(), self.lang)})
 
     @intent_handler("query_memory_usage.intent")
     def handle_get_memory(self, message):
         m = psutil.virtual_memory()
-        memory = pronounce_number(m.percent, lang=self.lang)
+        memory = spoken_percent(m.percent, self.lang)
         self.speak_dialog("current_memory", {"memory": memory})
         memory = nice_bytes(m.available)
         total = nice_bytes(m.total)
         self.speak_dialog("available_memory",
                           {"memory": memory, "total": total})
+
+    @intent_handler("query_disk_space.intent")
+    def handle_get_disk_space(self, message):
+        d = psutil.disk_usage('/')
+        free = nice_bytes(d.free)
+        total = nice_bytes(d.total)
+        self.speak_dialog("disk_space", {"free": free, "total": total})
+
+    @intent_handler("query_uptime.intent")
+    def handle_get_uptime(self, message):
+        uptime = time.time() - psutil.boot_time()
+        self.speak_dialog("uptime",
+                          {"uptime": nice_duration(uptime, lang=self.lang)})
+
+    @intent_handler("query_core_version.intent")
+    def handle_get_core_version(self, message):
+        from ovos_core.version import VERSION_MAJOR, VERSION_MINOR, VERSION_BUILD
+        version = f"{VERSION_MAJOR}.{VERSION_MINOR}.{VERSION_BUILD}"
+        self.speak_dialog("core_version", {"version": version})
 
     @intent_handler("query_user_location.intent")
     def handle_user_location(self, message):
@@ -81,27 +103,14 @@ class SystemDiagnosticsSkill(OVOSSkill):
         if self.secondary_langs:
             self.handle_secondary_langs(message)
 
-    ######################
-    # TODO - query via bus
-    def handle_list_skills(self, message):
-        # TODO - placeholder
-        skills = [self.skill_id]
-        self.speak(f"I have the following skills installed: {', '.join(skills)}")
-
-    def handle_list_tts(self, message):
-        # TODO - placeholder
-        plugins = []
-        self.speak(f"I have the following text to speech plugins installed: {', '.join(plugins)}")
-
-    def handle_list_stt(self, message):
-        # TODO - placeholder
-        plugins = []
-        self.speak(f"I have the following speech to text plugins installed: {', '.join(plugins)}")
-
-    def handle_list_vad(self, message):
-        # TODO - placeholder
-        plugins = []
-        self.speak(f"I have the following voice activity detection plugins installed: {', '.join(plugins)}")
+def spoken_percent(percent: float, lang: str) -> str:
+    """psutil percents carry one decimal; "45.0" reads as "45"."""
+    value = f"{percent:.1f}".removesuffix(".0")
+    try:
+        return spell(value, lang)[0].text
+    except UnsupportedLanguageError:
+        # numtag has no writer for this language (fa, oc)
+        return pronounce_number(float(value), lang=lang)
 
 
 def has_nvidia_gpu():
